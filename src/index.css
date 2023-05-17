@@ -4,4 +4,31 @@
 body{
   margin: 0;
   font-family: "Odibee Sans";
+  height: 100vh;
+}
+/* Welcome Page */
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:60px 20px 0;
+  max-width: 350px;
+  margin:0 auto;
+}
+.titulo{
+  /* padding:20px; */
+  margin-bottom:74px;
+}
+.subtitulo{
+  margin-bottom: 45px;
+}
+.button{
+  margin-bottom: 86px;
+}
+.contenedor-manos{
+  display: flex;
+  justify-content: space-around;
+}
+.hand{
+  display: flex;
 }
