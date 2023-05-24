@@ -7,13 +7,17 @@ body{
   height: 100vh;
 }
 /* Welcome Page */
+.root{
+  height: 100vh;
+}
 .contenedor{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   padding:60px 20px 0;
   max-width: 350px;
   margin:0 auto;
+  height: 100vh;
 }
 .titulo{
   /* padding:20px; */
@@ -32,3 +36,10 @@ body{
 .hand{
   display: flex;
 }
+.intervaloContador{
+  font-weight:700;
+  font-size:100px;
+  text-align: center;
+}
+
+/*  */

@@ -12,19 +12,34 @@ export function init() {
         }
         refactor() {
             var hand = this.getAttribute("hand") || "rock";
+            var contexto = this.getAttribute("contexto") || "menu";
+            var onclick = this.getAttribute("onclick") || false;
             var style = document.createElement("style");
+            var div = document.createElement("div");
+
             style.textContent = `
                 :host{
-                  display:block;
+                display:block;
                 }
-              `;
+                .menu{
+                    width:57px;
+                    height:127px;
+                }
+                .ingame{
+                    width:70px;
+                    height:190px;
+                }
+            `;
             var shadow = this.attachShadow({ mode: "open" });
-            shadow.appendChild(style);
-
             var imgEl = document.createElement("img");
+            /*  */
+            shadow.appendChild(style);
             imgEl.setAttribute("src", hands[hand]);
+            /*  */
+            imgEl.classList.add(contexto);
+            div.appendChild(imgEl);
             //Agrego al shadow
-            shadow.appendChild(imgEl);
+            shadow.appendChild(div);
         }
     }
     customElements.define("hand-el", HandComponent);

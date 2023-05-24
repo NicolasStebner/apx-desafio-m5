@@ -17,7 +17,7 @@ export function initPageInstructions(params) {
     var button = div.querySelector(".button");
     console.log("instructions");
     button?.addEventListener("click", () => {
-        params.goTo("welcome");
+        params.goTo("game");
     });
     return div;
 }

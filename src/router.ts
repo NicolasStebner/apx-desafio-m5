@@ -1,6 +1,6 @@
 import { initPageWelcome } from "./pages/welcome";
 import { initPageInstructions } from "./pages/intructions";
-/* import { initPageThankYou } from "./pages/thankyou"; */
+import { initPageGame } from "./pages/game";
 
 const routes = [
     {
@@ -12,10 +12,10 @@ const routes = [
         path: /\/instructions/,
         component: initPageInstructions,
     },
-    /*{
-        path: /\/thankyou/,
-        component: initPageThankYou,
-    },*/
+    {
+        path: /\/game/,
+        component: initPageGame,
+    },
 ];
 
 export function initRouter(container: Element) {
