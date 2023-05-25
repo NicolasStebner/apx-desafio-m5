@@ -7,8 +7,10 @@ export function initPageGame(params) {
         if (counter < 1) {
             clearInterval(intervalo);
             pcEligeMano();
-            /* console.log(state.lastSelectUser());
-            console.log(state.lastSelectComputer()); */
+            state.whoWins(state.lastSelectUser(), state.lastSelectComputer());
+            setInterval(() => {
+                params.goTo("/instructions");
+            }, 3000);
         }
         counter--;
     }, 1000);
@@ -18,15 +20,19 @@ export function initPageGame(params) {
     div.innerHTML = `
     <div class="intervaloContador"></div>
     <div class="contenedor-manos">
-      <hand-el class="hand" contexto="ingame" onclick=true hand="scissors"></hand-el>
-      <hand-el class="hand" contexto="ingame" onclick=true hand="rock"></hand-el>
-      <hand-el class="hand" contexto="ingame" onclick=true hand="paper"></hand-el>
+        <hand-el contexto="ingame" hand="scissors"></hand-el>
+        <hand-el contexto="ingame" hand="rock"></hand-el>
+        <hand-el contexto="ingame" hand="paper"></hand-el>
     </div>
     `;
-    const manos = div.querySelectorAll(".hand");
-    manos.forEach((mano) => {
+    /*  */
+    const manosEl = div.querySelectorAll("hand-el");
+    console.log(manosEl);
+    manosEl.forEach((mano) => {
         mano.addEventListener("click", () => {
             state.setSelectUser(mano.getAttribute("hand") || state.lastSelectUser());
+            /* var ultimaMano = mano;
+            console.log(ultimaMano); */
         });
     });
     return div;

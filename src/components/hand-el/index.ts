@@ -8,12 +8,15 @@ export function init() {
     class HandComponent extends HTMLElement {
         constructor() {
             super();
-            this.refactor();
+            this.render();
         }
-        refactor() {
+        connectedCallBack() {
+            console.log("cb");
+            this.render();
+        }
+        render() {
             var hand = this.getAttribute("hand") || "rock";
             var contexto = this.getAttribute("contexto") || "menu";
-            var onclick = this.getAttribute("onclick") || false;
             var style = document.createElement("style");
             var div = document.createElement("div");
 
@@ -29,12 +32,22 @@ export function init() {
                     width:70px;
                     height:190px;
                 }
+                .onClick{
+                    transform: translateY(5px);
+                    transtition: all 0.3s ease-in-out;
+                }
+                .outClick{
+                    opacity: 45%;
+                    transtition: all 0.3s ease-in-out;
+                }
             `;
             var shadow = this.attachShadow({ mode: "open" });
             var imgEl = document.createElement("img");
             /*  */
             shadow.appendChild(style);
             imgEl.setAttribute("src", hands[hand]);
+            /*  */
+            imgEl.classList.add("onClick");
             /*  */
             imgEl.classList.add(contexto);
             div.appendChild(imgEl);

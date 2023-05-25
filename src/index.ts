@@ -12,9 +12,8 @@ function initComponents() {
     handEl();
 }
 (function () {
-    /* document.querySelector(".contenedor-piedra-papel-tijera")!.innerHTML = `
-        <img src=${imageURL}>
-        `; */
+    document.querySelector(".root")!.style.backgroundImage = `url(${imageURL})`;
+    //document.querySelector(".root")!.style.backgroundRepeat = "repeat";
     initComponents();
     initRouter(document.querySelector(".root")!);
 })();

@@ -33,9 +33,9 @@ body{
   display: flex;
   justify-content: space-around;
 }
-.hand{
+/* .hand{
   display: flex;
-}
+} */
 .intervaloContador{
   font-weight:700;
   font-size:100px;

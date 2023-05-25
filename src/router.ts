@@ -39,7 +39,7 @@ export function initRouter(container: Element) {
     } else {
         handleRoute(location.pathname);
     }
-    window.onpopstate = function () {
+    window.onpopstate = () => {
         handleRoute(location.pathname);
     };
 }

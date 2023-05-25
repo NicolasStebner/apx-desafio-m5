@@ -1,4 +1,3 @@
-//import { state } from "../../state";
 export function initPageInstructions(params) {
     const div = document.createElement("div");
     div.classList.add("contenedor");
@@ -15,7 +14,6 @@ export function initPageInstructions(params) {
       </div>
   `;
     var button = div.querySelector(".button");
-    console.log("instructions");
     button?.addEventListener("click", () => {
         params.goTo("game");
     });
