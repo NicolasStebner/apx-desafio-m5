@@ -4,7 +4,7 @@ const state = {
             myPlay: "",
             computerPlay: "",
         },
-        history: [{}],
+        history: [{ vos: 0, maquina: 0, lastResult: "" }],
     },
     getState() {
         return this.data;
@@ -24,6 +24,14 @@ const state = {
         const cs = this.getState();
         cs.currentGame.computerPlay = move;
     },
+    getLastResultOfUser() {
+        const cs = this.getHistory();
+        return cs["lastResult"];
+    },
+    setLastMatchResult(result: "ganaste" | "perdiste" | "empataste") {
+        const cs = this.getHistory();
+        cs["lastResult"] = result;
+    },
     whoWins(myPlay, computerPlay) {
         const empate = myPlay == computerPlay;
         const ganeConTijeras = myPlay == "scissors" && computerPlay == "paper";
@@ -32,12 +40,16 @@ const state = {
         const gane = [ganeConTijeras, ganeConPaper, ganeConPiedra].filter((e) => e == true).length;
         if (gane) {
             //uso del falsy ; 0 = false
-            console.log("gane");
+            this.setLastMatchResult("ganaste");
         } else if (empate) {
-            console.log("empate");
+            this.setLastMatchResult("empataste");
         } else {
-            console.log("perdiste");
+            this.setLastMatchResult("perdiste");
         }
+    },
+    getHistory() {
+        const cs = this.getState();
+        return cs.history;
     },
 };
 

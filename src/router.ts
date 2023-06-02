@@ -1,6 +1,7 @@
 import { initPageWelcome } from "./pages/welcome";
 import { initPageInstructions } from "./pages/intructions";
 import { initPageGame } from "./pages/game";
+import { initPageResult } from "./pages/result";
 
 const routes = [
     {
@@ -16,17 +17,21 @@ const routes = [
         path: /\/game/,
         component: initPageGame,
     },
+    {
+        path: /\/result/,
+        component: initPageResult,
+    },
 ];
 
 export function initRouter(container: Element) {
-    function goTO(path) {
+    function goTo(path) {
         history.pushState({}, "", path);
         handleRoute(path);
     }
     function handleRoute(route) {
         for (const r of routes) {
             if (r.path.test(route)) {
-                const el = r.component({ goTo: goTO });
+                const el = r.component({ goTo: goTo });
                 if (container.firstChild) {
                     container.firstChild?.remove();
                 }
@@ -35,7 +40,7 @@ export function initRouter(container: Element) {
         }
     }
     if (location.pathname == "/") {
-        goTO("/welcome");
+        goTo("/welcome");
     } else {
         handleRoute(location.pathname);
     }

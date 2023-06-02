@@ -32,14 +32,6 @@ export function init() {
                     width:70px;
                     height:190px;
                 }
-                .onClick{
-                    transform: translateY(5px);
-                    transtition: all 0.3s ease-in-out;
-                }
-                .outClick{
-                    opacity: 45%;
-                    transtition: all 0.3s ease-in-out;
-                }
             `;
             var shadow = this.attachShadow({ mode: "open" });
             var imgEl = document.createElement("img");
