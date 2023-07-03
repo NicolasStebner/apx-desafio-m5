@@ -37,9 +37,6 @@ body{
 .inverted{
   transform: rotate(3.142rad);
 }
-/* .hand:hover{
-  display: flex;
-} */
 .active{
   transform: translateY(5px);
   transition: all 0.3s ease-in-out;
@@ -54,3 +51,36 @@ body{
   text-align: center;
 }
 /*  */
+.contenedor-resultado {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.resultado-posta{
+  font-size: 41px;
+  text-align: center;
+}
+.resultado-score-text{
+  margin: 20px 0 ;
+}
+.resultado-score{
+  border: solid 10px black;
+  border-radius: 6px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  min-width: 259px;
+  margin: 0 auto 20px;
+  font-size: 45px;
+}
+.button-volver-a-jugar{
+  min-width: 350px;
+  margin:0 auto;
+  justify-content: center;
+}

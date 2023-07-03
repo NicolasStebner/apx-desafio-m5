@@ -8,8 +8,11 @@
   },
   "scripts": {
     "dev": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html",
+    "build": "parcel build ./src/index.html --dist-dir build",
     "deploy": "gh-pages -d ./dist",
     "build-and-deploy": "npm run build && npm run deploy"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

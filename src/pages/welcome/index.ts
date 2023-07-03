@@ -1,13 +1,10 @@
 const imageURL = require("../../assets/fondo.png");
+import { state } from "../../state";
 
 export function initPageWelcome(params) {
+    state.init();
     const div = document.createElement("div");
     div.classList.add("contenedor");
-    /* document.querySelector(".root")!.innerHTML = `
-        <img src=${imageURL}>
-    `; */
-    //document.querySelector(".root")!.style.backgroundImage = imageURL;
-    //document.querySelector(".root")!.setAttribute("background-image", imageURL);
     div.innerHTML = `
       <title-el class="titulo" label="Piedra Papel ó Tijera"></title-el>
       <button-el class="button" label="Empezar"></button-el>

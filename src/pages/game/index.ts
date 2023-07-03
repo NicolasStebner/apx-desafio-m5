@@ -9,9 +9,7 @@ export function initPageGame(params) {
             clearInterval(intervalo);
             pcEligeMano();
             state.whoWins(state.lastSelectUser(), state.lastSelectComputer());
-            setInterval(() => {
-                params.goTo("/result");
-            }, 1000);
+            params.goTo("/result");
         }
         counter--;
     }, 1000);

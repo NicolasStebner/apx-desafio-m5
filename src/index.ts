@@ -13,7 +13,6 @@ function initComponents() {
 }
 (function () {
     document.querySelector(".root")!.style.backgroundImage = `url(${imageURL})`;
-    //document.querySelector(".root")!.style.backgroundRepeat = "repeat";
     initComponents();
     initRouter(document.querySelector(".root")!);
 })();
