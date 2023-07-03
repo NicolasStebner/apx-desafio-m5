@@ -39,7 +39,7 @@ export function initRouter(container: Element) {
             }
         }
     }
-    if (location.pathname == "/apx-desafio-m5") {
+    if (location.pathname == "/") {
         goTo("/welcome");
     } else {
         handleRoute(location.pathname);
